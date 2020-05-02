@@ -1,10 +1,29 @@
-'use strict'
+"use strict";
 
-const fibonacci = () => null
+const fibonacci = () => {
+  let count = 0;
+  const result = [];
 
-const isFibonnaci = (num) => null
+  let ant = 1;
+  let number = 0;
+
+  while (count < 350) {
+    result.push(number);
+    count++;
+    let aux = ant;
+    ant = number;
+    number = aux + ant;
+  }
+
+  return result;
+};
+
+const isFibonnaci = (num) => {
+  const sequence = fibonacci();
+  return sequence.find((number) => number === num) ? true : false;
+};
 
 module.exports = {
-    fibonacci,
-    isFibonnaci
-}
+  fibonacci,
+  isFibonnaci,
+};
